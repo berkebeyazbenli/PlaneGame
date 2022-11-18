@@ -161,7 +161,17 @@ public class PanelGame extends JComponent {
 				}else if(e.getKeyCode()==KeyEvent.VK_K) {
 					key.setKey_k(true);
 				}else if(e.getKeyCode()==KeyEvent.VK_SPACE) {
-					
+					switch (r){
+						case 0:
+							break;
+						case 1:
+							start=true;
+							start();
+							repaint();
+							r=0;
+							point=0;
+							break;
+					}
 				
 					
 				}
@@ -332,7 +342,11 @@ public class PanelGame extends JComponent {
 					g2.drawString("GAME OVER", 500, 300);
 					g2.setFont(new Font("s",Font.BOLD,35));
 					g2.drawString("Press Space to Restart", 500, 400);
+					r=1;
+
+
 					g2.dispose();
+					start=false;
 					
 				}
 			}
@@ -365,7 +379,7 @@ public class PanelGame extends JComponent {
 				
 			}
 		}
-		g2.setColor(new Color(255,0,0));
+		g2.setColor(new Color(255,255,0));
 		g2.setFont(new Font("serif",Font.BOLD,20));
 		g2.drawString("POINTS: "+point, 100, 100);
 		
@@ -391,26 +405,6 @@ public class PanelGame extends JComponent {
 	
 		
 	}
-//	private void restart() {
-//		
-//	new PanelGame();	
-//	start();
-//	drawBackground();
-//	drawGame();
-//	render();
-//	
-//	}
-//	public void sleepBullet(long time) {
-//		long actionTime = 0L;
-//	
-//		long currentTime = System.currentTimeMillis();
-//		if( currentTime - actionTime >= time*1000) {
-//		     actionTime = currentTime;
-//		 
-//		} else {
-//		     System.out.println("You have to wait: " + (time*1000 - (currentTime - actionTime)) + " more ms!");
-//		}
-//	}
-//	
+
 	
 }
