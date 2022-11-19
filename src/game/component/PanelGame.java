@@ -33,7 +33,7 @@ import game.obj.Rocket;
 
 
 public class PanelGame extends JComponent {
-	
+	//berke yarramı yesin
 	private Graphics2D g2;
 	private BufferedImage image;
 	private int width;
